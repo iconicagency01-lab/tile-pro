@@ -4,968 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TilePro - Meilleur Plancher de Garage au Maroc</title>
+    <meta name="description" content="TilePro — Dalles modulaires de luxe pour garage au Maroc. Installation DIY, 5 couleurs, technologie autodrainante.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-black: #000000;
-            --primary-white: #FFFFFF;
-            --light-grey: #f8f8f8;
-            --accent-green: #00FF88;
-            --accent-blue: #0088FF;
-            --accent-yellow: #FFCC00;
-            --accent-red: #FF4444;
-            --accent-orange: #FF6B00;
-            --accent-pink: #BA0065;
-            --accent-teal: #00DDA3;
-            --text-gray: #666666;
-            --text-dark: #333333;
-        }
-
-        body {
-            background-color: var(--primary-white);
-            color: var(--primary-white);
-            overflow-x: hidden;
-            font-weight: 400;
-            font-family: 'Inter', sans-serif;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--primary-black);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            height: 60px;
-            width: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            color: var(--primary-white);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .nav-menu a:hover {
-            color: var(--accent-blue);
-        }
-
-/* NOUVEAU: Conteneur des boutons header */
-.header-buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-left: 1rem;
-}
-
-/* NOUVEAU: Bouton Devis */
-.btn-devis {
-    background: linear-gradient(135deg, var(--accent-blue) 0%, #0066CC 100%);
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0, 136, 255, 0.3);
-}
-
-.btn-devis:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 136, 255, 0.4);
-    background: linear-gradient(135deg, #0099FF 0%, var(--accent-blue) 100%);
-    color: white;
-}
-
-/* NOUVEAU: Bouton Design */
-.btn-design {
-    background: linear-gradient(135deg, var(--accent-green) 0%, #00CC66 100%);
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
-}
-
-.btn-design:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
-    background: linear-gradient(135deg, #00FF88 0%, var(--accent-green) 100%);
-    color: white;
-}
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--primary-white);
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-
-
-        /* Mobile Menu */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: var(--primary-black);
-            z-index: 999;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .mobile-nav.active {
-            display: flex;
-        }
-
-        .mobile-nav a {
-            color: var(--primary-white);
-            text-decoration: none;
-            font-size: 1.5rem;
-            margin: 1rem 0;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .mobile-nav a:hover {
-            color: var(--accent-blue);
-        }
-
-        .close-menu {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: none;
-            border: none;
-            color: var(--primary-white);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-/* NOUVEAU: Conteneur des boutons mobiles */
-.mobile-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.mobile-buttons a {
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef84e863346366954f6bbf.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-
-        /* Compact Section Styling - Like New Sections */
-        .compact-section {
-            padding: 5rem 5%;
-        }
-
-        .compact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .compact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .compact-section-black {
-            background-color: var(--primary-black);
-        }
-
-        .compact-section-white {
-            background-color: var(--primary-white);
-            color: var(--text-dark);
-        }
-
-        .compact-img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .compact-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .compact-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--text-gray);
-            font-weight: 600;
-        }
-
-        .compact-content p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            color: var(--text-gray);
-        }
-
-        .highlight-green {
-            color: var(--accent-green);
-        }
-
-        .highlight-blue {
-            color: var(--accent-blue);
-        }
-
-        .highlight-yellow {
-            color: var(--accent-yellow);
-        }
-
-        .highlight-red {
-            color: var(--accent-red);
-        }
-
-        /* Alternating Compact Sections */
-        .alternating-compact-section {
-            padding: 5rem 5%;
-        }
-
-        .alternating-compact-item {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 4rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .alternating-compact-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .alternating-compact-item.reverse {
-            direction: rtl;
-        }
-
-        .alternating-compact-item.reverse > * {
-            direction: ltr;
-        }
-
-        .alternating-compact-img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .alternating-compact-content h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .alternating-compact-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--text-gray);
-            font-weight: 600;
-        }
-
-        .alternating-compact-content p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            font-weight: 400;
-            color: var(--text-gray);
-        }
-
-        /* Full Image with Text Sections */
-        .full-image-with-text {
-            padding: 5rem 5%;
-        }
-
-        .full-image-with-text-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .full-image-with-text.image-right .full-image-with-text-container {
-            direction: rtl;
-        }
-
-        .full-image-with-text.image-right .full-image-with-text-container > * {
-            direction: ltr;
-        }
-
-        .full-image-with-text-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .full-image-with-text-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .full-image-with-text-text h2 span {
-            color: var(--accent-blue);
-        }
-
-        .full-image-with-text-icon {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-            align-items: flex-start;
-        }
-
-        .full-image-with-text-icon-icon {
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .full-image-with-text-icon-icon img {
-            width: 100%;
-            height: auto;
-        }
-
-        .full-image-with-text-icon-text h2 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .full-image-with-text-icon-text p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-gray);
-        }
-
-        /* Rich Text Section */
-        .rich-text {
-            padding: 4rem 5%;
-            background-color: var(--primary-white);
-            text-align: center;
-        }
-
-        .rich-text h2 {
-            font-size: 3rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .rich-text h2 span {
-            color: var(--accent-blue);
-        }
-
-        /* Color Picker Section */
-        .color-section {
-            padding: 5rem 5%;
-            background-color: var(--primary-black);
-        }
-
-        .color-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .color-display {
-            position: relative;
-            height: 450px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .color-image {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: all 0.5s ease;
-        }
-
-        .color-picker {
-            padding: 2rem;
-        }
-
-        .color-picker h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            color: var(--primary-white);
-        }
-
-        .color-picker .subtitle {
-            font-size: 1.05rem;
-            margin-bottom: 2.5rem;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        .color-name-display {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            color: var(--primary-white);
-        }
-
-        .color-name-display span {
-            color: var(--primary-white);
-        }
-
-        .color-options {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .color-option {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-        }
-
-        .color-option:hover {
-            transform: scale(1.1);
-        }
-
-        .color-option.active {
-            border-color: var(--primary-white);
-            transform: scale(1.1);
-        }
-
-        /* Quote Section */
-        .quote-section {
-            padding: 5rem 5%;
-            background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 100%);
-            text-align: center;
-        }
-
-        .quote-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .quote-header {
-            margin-bottom: 3rem;
-        }
-
-        .quote-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            color: var(--primary-white);
-        }
-
-        .quote-header p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        .quote-form {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-black);
-            color: var(--primary-white);
-            padding: 4rem 5% 2rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-        }
-
-        .footer-logo {
-            height: 50px;
-            width: auto;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-info p {
-            color: var(--text-gray);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            max-width: 300px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--primary-white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent-blue);
-            transform: translateY(-3px);
-        }
-
-        .footer-links h4 {
-            color: var(--primary-white);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: var(--text-gray);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-        }
-
-        .developer-credit {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        .developer-credit a {
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        .developer-credit a:hover {
-            text-decoration: underline;
-        }
-
-        /* ==================== */
-        /* RESPONSIVE DESIGN */
-        /* ==================== */
-
-        /* Tablets and Small Laptops */
-        @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .compact-content h2,
-            .color-picker h2,
-            .full-image-with-text-text h2,
-            .rich-text h2,
-            .quote-header h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Tablets */
-        @media (max-width: 968px) {
-            .compact-grid,
-            .alternating-compact-item,
-            .color-container,
-            .full-image-with-text-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .compact-content h2,
-            .color-picker h2,
-            .full-image-with-text-text h2,
-            .rich-text h2,
-            .quote-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .alternating-compact-item.reverse,
-            .full-image-with-text.image-right .full-image-with-text-container {
-                direction: ltr;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .logo {
-                height: 50px;
-            }
-
-            .rich-text h2 {
-                font-size: 2.2rem;
-            }
-
-            .quote-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .color-display {
-                height: 400px;
-            }
-            
-            .full-image-with-text-icon {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .full-image-with-text-icon-icon {
-                margin: 0 auto;
-            }
-        }
-
-        /* Mobile Phones */
-
-@media (max-width: 968px) {
-    .header-buttons {
-        display: none;  /* Cache les boutons desktop */
-    }
-}
-        @media (max-width: 768px) {
-            .hero {
-                padding: 0 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .compact-section,
-            .alternating-compact-section,
-            .full-image-with-text,
-            .color-section,
-            .quote-section {
-                padding: 4rem 1rem;
-            }
-            
-            .alternating-compact-item {
-                gap: 2rem;
-                margin-bottom: 3rem;
-            }
-            
-            .compact-content h2,
-            .color-picker h2,
-            .full-image-with-text-text h2,
-            .rich-text h2,
-            .quote-header h2 {
-                font-size: 1.7rem;
-            }
-            
-            .rich-text h2 {
-                font-size: 2rem;
-            }
-            
-            .quote-header h2 {
-                font-size: 2rem;
-            }
-            
-            .quote-header p {
-                font-size: 1.1rem;
-            }
-            
-            .color-display {
-                height: 300px;
-            }
-            
-            .color-options {
-                justify-content: center;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-info p {
-                margin: 0 auto 1.5rem;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
-
-        /* Small Mobile Phones */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 0.9rem;
-            }
-            
-            .compact-section,
-            .alternating-compact-section,
-            .full-image-with-text,
-            .color-section,
-            .quote-section {
-                padding: 3rem 1rem;
-            }
-            
-            .color-option {
-                width: 40px;
-                height: 40px;
-            }
-
-            .rich-text h2 {
-                font-size: 1.8rem;
-            }
-            
-            .quote-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .quote-header p {
-                font-size: 1rem;
-            }
-            
-            .quote-form {
-                padding: 1rem;
-            }
-            
-            .color-display {
-                height: 250px;
-            }
-            
-            .footer-logo {
-                height: 40px;
-            }
-            
-            .logo {
-                height: 45px;
-            }
-            
-            .mobile-nav a {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Very Small Mobile Phones */
-        @media (max-width: 360px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .color-options {
-                gap: 0.5rem;
-            }
-            
-            .color-option {
-                width: 35px;
-                height: 35px;
-            }
-            
-            .compact-content h2,
-            .color-picker h2,
-            .full-image-with-text-text h2,
-            .rich-text h2,
-            .quote-header h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68efd2bf895e2e4843877dd4.png" alt="TilePro" class="logo">
-     <nav class="nav-menu">
-    <a href="#accueil">Accueil</a>
-    <a href="#technologie">Technologie</a>
-    <a href="#avantages">Avantages</a>
-    <a href="#couleurs">Couleurs</a>
-    <a href="#performance">Performance</a>
-    <!-- AJOUT: Conteneur des boutons -->
-    <div class="header-buttons">
-        <a href="#devis" class="btn-devis">Devis</a>
-        <a href="https://tilepro.ma/cal" target="_blank" class="btn-design">Concevez votre plancher</a>
-    </div>
-</nav>
-        <button class="mobile-menu-btn">
+        <a href="index.html">
+            <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68efd2bf895e2e4843877dd4.png" alt="TilePro" class="logo">
+        </a>
+        <nav class="nav-menu">
+            <a href="#accueil">Accueil</a>
+            <a href="#technologie">Technologie</a>
+            <a href="#avantages">Avantages</a>
+            <a href="#couleurs">Couleurs</a>
+            <a href="#performance">Performance</a>
+            <div class="header-buttons">
+                <a href="#devis" class="btn-devis">Devis</a>
+                <a href="cal.html" class="btn-design">Concevez votre plancher</a>
+            </div>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Ouvrir le menu">
             <i class="fas fa-bars"></i>
         </button>
     </header>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-    <button class="close-menu" id="closeMenu">
-        <i class="fas fa-times"></i>
-    </button>
-    <a href="#accueil" class="mobile-nav-link">Accueil</a>
-    <a href="#technologie" class="mobile-nav-link">Technologie</a>
-    <a href="#avantages" class="mobile-nav-link">Avantages</a>
-    <a href="#couleurs" class="mobile-nav-link">Couleurs</a>
-    <a href="#performance" class="mobile-nav-link">Performance</a>
-    <!-- AJOUT: Boutons dans le menu mobile -->
-    <div class="mobile-buttons">
-        <a href="#devis" class="btn-devis">Devis</a>
-        <a href="https://tilepro.ma/cal" target="_blank" class="btn-design">Concevez votre plancher</a>
+        <button class="close-menu" id="closeMenu" aria-label="Fermer le menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#accueil" class="mobile-nav-link">Accueil</a>
+        <a href="#technologie" class="mobile-nav-link">Technologie</a>
+        <a href="#avantages" class="mobile-nav-link">Avantages</a>
+        <a href="#couleurs" class="mobile-nav-link">Couleurs</a>
+        <a href="#performance" class="mobile-nav-link">Performance</a>
+        <div class="mobile-buttons">
+            <a href="#devis" class="btn-devis mobile-nav-link">Devis</a>
+            <a href="cal.html" class="btn-design">Concevez votre plancher</a>
+        </div>
     </div>
-</div>
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
@@ -975,15 +56,15 @@
         </div>
     </section>
 
-    <!-- Section 1: Morocco's Finest - COMPACT VERSION -->
+    <!-- Section 1: Morocco's Finest -->
     <section class="compact-section compact-section-black">
         <div class="compact-container">
             <div class="compact-grid">
                 <div class="compact-content">
                     <h2>Le Meilleur <span class="highlight-blue">Plancher Modulaire</span> au Maroc</h2>
-                    <p>Design á la fois fonctionnel et esthétique, conçu pour s'adapter a tout style de vie.</p>
+                    <p>Design à la fois fonctionnel et esthétique, conçu pour s'adapter à tout style de vie.</p>
                     <p>Dalles de sol modulaires flexibles et imbriquables pour tout espace.</p>
-                    <p>Installation DIY rapide : Pas besoin d'outils, de colle ou de préparation – obtenez une amélioration stylée en quelques heures avec 5 couleurs vibrantes.</p>
+                    <p>Installation DIY rapide : Pas besoin d'outils, de colle ou de préparation — obtenez une amélioration stylée en quelques heures avec 5 couleurs vibrantes.</p>
                 </div>
                 <div class="compact-img-container">
                     <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5aa83a96e2aeeee51.webp" alt="TilePro Modular Flooring" class="compact-img">
@@ -992,7 +73,7 @@
         </div>
     </section>
 
-    <!-- Section 2: AirRib Technology - COMPACT VERSION -->
+    <!-- Section 2: AirRib Technology -->
     <section class="compact-section compact-section-black" id="technologie">
         <div class="compact-container">
             <div class="compact-grid">
@@ -1000,9 +81,9 @@
                     <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef953745c32c2e6489f1c1.webp" alt="TilePro AirRib Technology" class="compact-img">
                 </div>
                 <div class="compact-content">
-                    <h2>Présentation de la Technologie <span class="highlight-blue">TilePro </span></h2>
+                    <h2>Présentation de la Technologie <span class="highlight-blue">TilePro</span></h2>
                     <h3><span class="highlight-green">Le plus polyvalent</span> et <span class="highlight-green">techniquement avancé</span> dalle de plancher de garage</h3>
-                    <p>Notre système innovant de canaux d'air favorise la ventilation, empêche l'accumulation d'humidité et permet un écoulement facile de l'eau et des débris sous chaque dalle, empêchant la moisissure et la moisissure causant des odeurs et assurant un entretien facile avec juste un aspirateur ou un tuyau.</p>
+                    <p>Notre système innovant de canaux d'air favorise la ventilation, empêche l'accumulation d'humidité et permet un écoulement facile de l'eau et des débris sous chaque dalle, empêchant la moisissure et assurant un entretien facile avec juste un aspirateur ou un tuyau.</p>
                     <p>Le design nervuré améliore non seulement la durabilité mais offre également une traction supérieure, offrant longévité et sécurité.</p>
                     <p>Découvrez la simplicité et l'excellence avec le système autodrainant de TilePro, gardant l'entretien de votre garage sans tracas.</p>
                 </div>
@@ -1010,7 +91,7 @@
         </div>
     </section>
 
-    <!-- Section 3: Alternating Sections - COMPACT VERSION -->
+    <!-- Section 3: Alternating Sections -->
     <section class="compact-section-white" id="avantages">
         <div class="alternating-compact-section">
             <!-- DIY Installation -->
@@ -1032,7 +113,7 @@
                 </div>
                 <div class="alternating-compact-content">
                     <h2><span class="highlight-blue">Protégez</span> Votre Plancher</h2>
-                    <p>Transformez votre espace avec les  de plancher TilePro - la protection ultime pour vos planchers. Notre design modulaire suspendu innovant ajoute non seulement une touche de style mais protège également vos surfaces existantes de l'usure. Élevez votre espace avec une solution de plancher aussi fonctionnelle que captivante, tout en assurant la longévité de votre sous-surface.</p>
+                    <p>Transformez votre espace avec les dalles de plancher TilePro — la protection ultime pour vos planchers. Notre design modulaire suspendu innovant ajoute non seulement une touche de style mais protège également vos surfaces existantes de l'usure. Élevez votre espace avec une solution de plancher aussi fonctionnelle que captivante, tout en assurant la longévité de votre sous-surface.</p>
                 </div>
             </div>
 
@@ -1043,13 +124,13 @@
                 </div>
                 <div class="alternating-compact-content">
                     <h2><span class="highlight-yellow">Dissimulez</span> Les Dommages du Plancher</h2>
-                    <p>Cachez facilement toutes les imperfections du plancher avec les  TilePro. Parfait pour les surfaces tachées, ébréchées ou pelées, les dalles TilePro couvrent rapidement les dommages, offrant un look frais et stylé. Modernisez votre espace sans effort pour une finition showroom, tout en assurant une solution de plancher durable et moderne.</p>
+                    <p>Cachez facilement toutes les imperfections du plancher avec les dalles TilePro. Parfait pour les surfaces tachées, ébréchées ou pelées, les dalles TilePro couvrent rapidement les dommages, offrant un look frais et stylé. Modernisez votre espace sans effort pour une finition showroom, tout en assurant une solution de plancher durable et moderne.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Portability - COMPACT VERSION -->
+    <!-- Section 4: Portability -->
     <section class="compact-section compact-section-black">
         <div class="compact-container">
             <div class="compact-grid">
@@ -1065,7 +146,7 @@
         </div>
     </section>
 
-    <!-- Customize Section - COMPACT VERSION -->
+    <!-- Customize Section -->
     <section class="compact-section compact-section-black">
         <div class="compact-container">
             <div class="compact-grid">
@@ -1089,10 +170,8 @@
             </div>
             <div class="color-picker">
                 <h2>Couleurs Riches</h2>
-                <p class="subtitle">Les  de plancher TilePro® offrent une polyvalence avec 5 couleurs riches. Choisissez vos propres couleurs et créez votre propre design pour correspondre à votre style.</p>
-                
+                <p class="subtitle">Les dalles de plancher TilePro offrent une polyvalence avec 5 couleurs riches. Choisissez vos propres couleurs et créez votre propre design pour correspondre à votre style.</p>
                 <div class="color-name-display">Couleur: <span id="currentColorName">Gris Ardoise</span></div>
-                
                 <div class="color-options">
                     <div class="color-option active" data-color="Gris Ardoise" data-image="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5895e2e76837c1d3d.webp" style="background-color: #708090;"></div>
                     <div class="color-option" data-color="Noir Jet" data-image="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb545c32c407c897fd9.webp" style="background-color: #0A0A0A;"></div>
@@ -1108,38 +187,35 @@
     <section class="full-image-with-text image-right" style="background-color: var(--light-grey);" id="performance">
         <div class="full-image-with-text-container">
             <div class="full-image-with-text-image">
-                <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5aa4910788a0e7849.webp">
+                <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5aa4910788a0e7849.webp" alt="Performance">
             </div>
             <div class="full-image-with-text-text">
                 <h2><span>Performance</span> Incroyable</h2>
-                
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3a96d082c5904754c.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3a96d082c5904754c.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #ed5a00">Durabilité Exceptionnelle</h2>        
-                        <p>Les  TilePro surpassent l'époxy ou la peinture de sol en résistant à la décoloration et en supportant la chaleur, les intempéries et les produits chimiques.</p>
+                        <h2 style="color: #ed5a00">Durabilité Exceptionnelle</h2>
+                        <p>Les dalles TilePro surpassent l'époxy ou la peinture de sol en résistant à la décoloration et en supportant la chaleur, les intempéries et les produits chimiques.</p>
                     </div>
                 </div>
-                
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3f9ab5345025ee8d5.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3f9ab5345025ee8d5.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #00b44c">Super Résistant</h2>        
-                        <p>Nos dalles sont conçus pour supporter des poids de roulement de 10 tonnes</p>
+                        <h2 style="color: #00b44c">Super Résistant</h2>
+                        <p>Nos dalles sont conçues pour supporter des poids de roulement de 10 tonnes.</p>
                     </div>
                 </div>
-                
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3ec764f2d08b3c63a.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3ec764f2d08b3c63a.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #ba0065">Dure Toute une Vie</h2>        
-                        <p>Choisissez les  de plancher de garage supérieurs TilePro et oubliez les tracas de repeindre ou de sceller vos planchers.</p>
+                        <h2 style="color: #ba0065">Dure Toute une Vie</h2>
+                        <p>Choisissez les dalles de plancher de garage supérieurs TilePro et oubliez les tracas de repeindre ou de sceller vos planchers.</p>
                     </div>
                 </div>
             </div>
@@ -1159,35 +235,33 @@
     <section class="full-image-with-text" style="background-color: var(--primary-white);">
         <div class="full-image-with-text-container">
             <div class="full-image-with-text-image">
-                <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5fdc7561fe877cbbd.webp">
+                <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5fdc7561fe877cbbd.webp" alt="Unmatched Value">
             </div>
             <div class="full-image-with-text-text">
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de39d906710ff6187c5.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de39d906710ff6187c5.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #dd0600">Système Autodrainant</h2>        
+                        <h2 style="color: #dd0600">Système Autodrainant</h2>
                         <p>Notre conception assure un flux d'air maximal, permettant un drainage rapide et efficace des liquides et des débris, gardant les surfaces sèches et propres.</p>
                     </div>
                 </div>
-                
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3cce5cb7913ba29c0.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3cce5cb7913ba29c0.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #00dda3">Surface Facile à Nettoyer</h2>        
+                        <h2 style="color: #00dda3">Surface Facile à Nettoyer</h2>
                         <p>Résistants aux produits pétroliers et à la plupart des produits chimiques, nos dalles maintiennent leur intégrité et sont simples à nettoyer, offrant une performance durable.</p>
                     </div>
                 </div>
-                
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3500b26bfa9300a28.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3500b26bfa9300a28.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #ddac00">Retrait des  pour Nettoyage</h2>        
+                        <h2 style="color: #ddac00">Retrait des Dalles pour Nettoyage</h2>
                         <p>Unique à notre conception, chaque dalle peut être facilement retiré et remplacé, permettant un accès direct pour le nettoyage en dessous sans perturber toute la disposition.</p>
                     </div>
                 </div>
@@ -1199,26 +273,25 @@
     <section class="full-image-with-text image-right" style="background-color: var(--light-grey);">
         <div class="full-image-with-text-container">
             <div class="full-image-with-text-image">
-                <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5629b05c230037f84.webp">
+                <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68ef8fb5629b05c230037f84.webp" alt="Simple Maintenance">
             </div>
             <div class="full-image-with-text-text">
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3ddbd5e1308f9606d.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de3ddbd5e1308f9606d.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #fb5f00">Maintenance Simple</h2>        
-                        <p>Ces  nécessitent peu d'entretien, se nettoient facilement avec un nettoyeur haute pression ou un aspirateur, vous faisant gagner du temps et des efforts. Pour les surfaces tachées ou sales, utilisez simplement un détergent ménager doux ou un dégraissant, et essuyez la tache avec un chiffon ou passez doucement une serpillère.</p>
+                        <h2 style="color: #fb5f00">Maintenance Simple</h2>
+                        <p>Ces dalles nécessitent peu d'entretien, se nettoient facilement avec un nettoyeur haute pression ou un aspirateur, vous faisant gagner du temps et des efforts. Pour les surfaces tachées ou sales, utilisez simplement un détergent ménager doux ou un dégraissant, et essuyez la tache avec un chiffon ou passez doucement une serpillère.</p>
                     </div>
                 </div>
-                
                 <div class="full-image-with-text-icon">
                     <div class="full-image-with-text-icon-icon">
-                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de34711d5da47c28690.svg">
+                        <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f13de34711d5da47c28690.svg" alt="">
                     </div>
                     <div class="full-image-with-text-icon-text">
-                        <h2 style="color: #ba0065">Remplacement Modulaire des </h2>        
-                        <p>Avec un système d'emboîtement à 6 points solide, les dalles TilePro assurent une connexion fiable. Cette conception modulaire permet le retrait et le remplacement sans tracas des  individuels, fournissant un accès facile à la zone en dessous lorsque nécessaire.</p>
+                        <h2 style="color: #ba0065">Remplacement Modulaire des Dalles</h2>
+                        <p>Avec un système d'emboîtement à 6 points solide, les dalles TilePro assurent une connexion fiable. Cette conception modulaire permet le retrait et le remplacement sans tracas des dalles individuels, fournissant un accès facile à la zone en dessous lorsque nécessaire.</p>
                     </div>
                 </div>
             </div>
@@ -1236,7 +309,7 @@
                 <iframe
                     src="https://api.leadconnectorhq.com/widget/form/EssUdZJgCYdZXDQXlZgW"
                     style="width:100%;height:493px;border:none;border-radius:3px"
-                    id="inline-EssUdZJgCYdZXDQXlZgW" 
+                    id="inline-EssUdZJgCYdZXDQXlZgW"
                     data-layout="{'id':'INLINE'}"
                     data-trigger-type="alwaysShow"
                     data-trigger-value=""
@@ -1260,7 +333,7 @@
         <div class="footer-content">
             <div class="footer-info">
                 <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68efd2bf895e2e4843877dd4.png" alt="TilePro" class="footer-logo">
-                <p> modulaires de luxe pour les projets résidentiels et commerciaux les plus exigeants. Transformez votre espace avec TilePro.</p>
+                <p>Dalles modulaires de luxe pour les projets résidentiels et commerciaux les plus exigeants. Transformez votre espace avec TilePro.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1268,7 +341,6 @@
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
             <div class="footer-links">
                 <h4>Produits</h4>
                 <ul>
@@ -1278,15 +350,13 @@
                     <li><a href="#performance">Performance</a></li>
                 </ul>
             </div>
-            
             <div class="footer-links">
                 <h4>Entreprise</h4>
                 <ul>
                     <li><a href="#accueil">À Propos</a></li>
-                    <li><a href="#devis">Devis</a></li>               
+                    <li><a href="#devis">Devis</a></li>
                 </ul>
             </div>
-            
             <div class="footer-links">
                 <h4>Support</h4>
                 <ul>
@@ -1297,7 +367,6 @@
                 </ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2025 TilePro. Tous droits réservés.</p>
             <p class="developer-credit">Développé par <a href="https://iconicagency.ma" target="_blank">iconicagency.ma</a></p>
@@ -1305,74 +374,55 @@
     </footer>
 
     <script>
-        // Mobile Menu Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const closeMenuBtn = document.getElementById('closeMenu');
             const mobileNav = document.getElementById('mobileNav');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            
-            // Open mobile menu
+
             mobileMenuBtn.addEventListener('click', function() {
                 mobileNav.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
-            
-            // Close mobile menu
+
             function closeMobileMenu() {
                 mobileNav.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
-            
+
             closeMenuBtn.addEventListener('click', closeMobileMenu);
-            
-            // Close menu when clicking on links
+
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', closeMobileMenu);
             });
-            
-            // Color Picker Functionality
+
+            // Color Picker
             const colorOptions = document.querySelectorAll('.color-option');
             const colorDisplay = document.getElementById('colorDisplay');
             const currentColorName = document.getElementById('currentColorName');
-            
+
             colorOptions.forEach(option => {
                 option.addEventListener('click', function() {
-                    // Remove active class from all options
                     colorOptions.forEach(opt => opt.classList.remove('active'));
-                    
-                    // Add active class to clicked option
                     this.classList.add('active');
-                    
-                    // Update the displayed image
-                    const imageUrl = this.getAttribute('data-image');
-                    colorDisplay.style.backgroundImage = `url('${imageUrl}')`;
-                    
-                    // Update the color name
-                    const colorName = this.getAttribute('data-color');
-                    currentColorName.textContent = colorName;
+                    colorDisplay.style.backgroundImage = `url('${this.getAttribute('data-image')}')`;
+                    currentColorName.textContent = this.getAttribute('data-color');
                 });
             });
 
-            // Smooth scrolling for navigation links
+            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
-            
-            // Close mobile menu on window resize if it becomes desktop
+
             window.addEventListener('resize', function() {
-                if (window.innerWidth > 968) {
-                    closeMobileMenu();
-                }
+                if (window.innerWidth > 968) closeMobileMenu();
             });
         });
     </script>
