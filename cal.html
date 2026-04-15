@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TilePro — Floor Designer</title>
+    <meta name="description" content="TilePro Floor Designer — Concevez votre sol et obtenez une estimation au Maroc">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-cal">
+    <!-- Header -->
+    <header>
+        <a href="index.html">
+            <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68efd2bf895e2e4843877dd4.png" alt="TilePro" class="logo">
+        </a>
+        <nav class="nav-menu">
+            <a href="index.html">Accueil</a>
+            <a href="index.html#technologie">Technologie</a>
+            <a href="index.html#avantages">Avantages</a>
+            <a href="index.html#couleurs">Couleurs</a>
+            <a href="index.html#performance">Performance</a>
+            <div class="header-buttons">
+                <a href="index.html#devis" class="btn-devis">Devis</a>
+                <a href="cal.html" class="btn-design">Concevez votre plancher</a>
+            </div>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Ouvrir le menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-menu" id="closeMenu" aria-label="Fermer le menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html" class="mobile-nav-link">Accueil</a>
+        <a href="index.html#technologie" class="mobile-nav-link">Technologie</a>
+        <a href="index.html#avantages" class="mobile-nav-link">Avantages</a>
+        <a href="index.html#couleurs" class="mobile-nav-link">Couleurs</a>
+        <a href="index.html#performance" class="mobile-nav-link">Performance</a>
+        <div class="mobile-buttons">
+            <a href="index.html#devis" class="btn-devis mobile-nav-link">Devis</a>
+            <a href="cal.html" class="btn-design">Concevez votre plancher</a>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+        <div class="app" role="application" aria-label="TilePro Floor Designer">
+
+            <!-- LEFT controls -->
+            <aside class="sidebar" aria-label="Contrôles">
+                <div class="brand">
+                    <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68f78e325d0f4e217061a0be.png" alt="TilePro">
+                    <div>
+                        <h1>TilePro <div class="tag">Floor Designer</div></h1>
+                        <div class="small">Conçu pour le Maroc — Français</div>
+                    </div>
+                </div>
+
+                <div class="accordion" id="accordion">
+                    <!-- 1 - Room Shape -->
+                    <div class="section open" data-section="roomType">
+                        <div class="head">
+                            <h3><i class="fas fa-shapes icon"></i> Forme de la pièce</h3>
+                            <div class="hint">Choisir</div>
+                        </div>
+                        <div class="body">
+                            <label>Type de forme</label>
+                            <div class="shape-buttons">
+                                <div class="shape-btn active" data-room="rect">
+                                    <div class="shape-icon">
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="5" y="5" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                                    </div>
+                                    <div class="shape-name">Rectangle</div>
+                                </div>
+                                <div class="shape-btn" data-room="lshape">
+                                    <div class="shape-icon">
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 5H20V12H12V20H5V5Z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                                    </div>
+                                    <div class="shape-name">L-Shape</div>
+                                </div>
+                                <div class="shape-btn" data-room="tshape">
+                                    <div class="shape-icon">
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 5H25V10H17V25H13V10H5V5Z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                                    </div>
+                                    <div class="shape-name">T-Shape</div>
+                                </div>
+                            </div>
+                            <div class="muted-note">Choisissez la forme de votre pièce. Les dimensions se définissent à l'étape suivante.</div>
+                        </div>
+                    </div>
+
+                    <!-- 2 - Dimensions -->
+                    <div class="section open" data-section="roomSize">
+                        <div class="head">
+                            <h3><i class="fas fa-ruler-combined icon"></i> Dimensions (m)</h3>
+                            <div class="hint">Taille</div>
+                        </div>
+                        <div class="body">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Largeur principale</label>
+                                    <input id="widthMain" type="number" step="0.01" min="0" value="3.50">
+                                </div>
+                                <div class="col">
+                                    <label>Longueur principale</label>
+                                    <input id="lengthMain" type="number" step="0.01" min="0" value="5.00">
+                                </div>
+                            </div>
+                            <div id="extraDims" style="display:none;margin-top:10px">
+                                <label>Pièce additionnelle — largeur</label>
+                                <input id="widthAdd" type="number" step="0.01" min="0" value="1.50">
+                                <label style="margin-top:8px">Pièce additionnelle — longueur</label>
+                                <input id="lengthAdd" type="number" step="0.01" min="0" value="2.00">
+                            </div>
+                            <div style="display:flex;gap:8px;margin-top:12px">
+                                <button id="resetBtn" class="btn btn-ghost"><i class="fas fa-redo"></i> Réinitialiser</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 - Door -->
+                    <div class="section" data-section="door">
+                        <div class="head">
+                            <h3><i class="fas fa-door-open icon"></i> Entrée / Porte</h3>
+                            <div class="hint">Porte</div>
+                        </div>
+                        <div class="body">
+                            <label>Largeur porte (m)</label>
+                            <input id="doorWidth" type="number" step="0.01" min="0" value="0.90">
+                            <label style="margin-top:8px">Mur</label>
+                            <select id="doorWall">
+                                <option value="bottom">Bas</option>
+                                <option value="top">Haut</option>
+                                <option value="left">Gauche</option>
+                                <option value="right">Droite</option>
+                            </select>
+                            <div class="muted-note">La porte est exclue de la surface car elle n'est pas carrelée.</div>
+                        </div>
+                    </div>
+
+                    <!-- 4 - Exclusions -->
+                    <div class="section" data-section="nontile">
+                        <div class="head">
+                            <h3><i class="fas fa-times-circle icon"></i> Zones sans dalles</h3>
+                            <div class="hint">Exclusions</div>
+                        </div>
+                        <div class="body">
+                            <label>Ajouter rectangle d'exclusion (m) — x/y depuis coin haut-gauche</label>
+                            <div class="row">
+                                <input id="exX" type="number" step="0.01" placeholder="x" min="0">
+                                <input id="exY" type="number" step="0.01" placeholder="y" min="0">
+                            </div>
+                            <div class="row" style="margin-top:8px">
+                                <input id="exW" type="number" step="0.01" placeholder="largeur" min="0">
+                                <input id="exH" type="number" step="0.01" placeholder="longueur" min="0">
+                            </div>
+                            <div style="display:flex;gap:8px;margin-top:10px">
+                                <button id="addExclusion" class="btn btn-primary"><i class="fas fa-plus"></i> Ajouter</button>
+                                <button id="clearExclusions" class="btn btn-ghost"><i class="fas fa-trash"></i> Effacer</button>
+                            </div>
+                            <div class="muted-note">Utilisez pour colonnes, puisards, trappes, etc.</div>
+                        </div>
+                    </div>
+
+                    <!-- 5 - Tile Selection -->
+                    <div class="section" data-section="tileSelect">
+                        <div class="head">
+                            <h3><i class="fas fa-th-large icon"></i> Sélection de dalle</h3>
+                            <div class="hint">Dalle</div>
+                        </div>
+                        <div class="body">
+                            <label>Taille (constante)</label>
+                            <div class="small">40 × 40 cm (fixe)</div>
+                            <label style="margin-top:10px">Couleur</label>
+                            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                                <button class="btn btn-ghost colorBtn" data-color="#d1d5db" style="display:flex;align-items:center;gap:6px"><span class="sw" style="background:#d1d5db"></span> Gris</button>
+                                <button class="btn btn-ghost colorBtn" data-color="#1f2937" style="display:flex;align-items:center;gap:6px"><span class="sw" style="background:#1f2937"></span> Noir</button>
+                                <button class="btn btn-ghost colorBtn" data-color="#ef4444" style="display:flex;align-items:center;gap:6px"><span class="sw" style="background:#ef4444"></span> Rouge</button>
+                                <button class="btn btn-ghost colorBtn" data-color="#3b82f6" style="display:flex;align-items:center;gap:6px"><span class="sw" style="background:#3b82f6"></span> Bleu</button>
+                                <button class="btn btn-ghost colorBtn" data-color="#f59e0b" style="display:flex;align-items:center;gap:6px"><span class="sw" style="background:#f59e0b"></span> Jaune</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 - Customization -->
+                    <div class="section" data-section="color">
+                        <div class="head">
+                            <h3><i class="fas fa-palette icon"></i> Personnalisation</h3>
+                            <div class="hint">Couleurs</div>
+                        </div>
+                        <div class="body">
+                            <div class="muted-note">Cliquez sur les dalles à droite pour appliquer la couleur sélectionnée. Maintenez Shift + click pour effacer la couleur.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top:14px" class="legend">
+                    <div class="item"><div class="sw" style="background:#d1d5db"></div><div class="small">Dalle</div></div>
+                    <div class="item"><div class="sw" style="background:#cde7ff"></div><div class="small">Bordure</div></div>
+                    <div class="item"><div class="sw" style="background:#fff3cd"></div><div class="small">Porte</div></div>
+                    <div class="item"><div class="sw" style="background:#ffe6e6"></div><div class="small">Exclusion</div></div>
+                </div>
+            </aside>
+
+            <!-- RIGHT area -->
+            <main class="canvas-wrap" role="main">
+                <div id="canvasControls">
+                    <div class="control-left">
+                        <div class="kbd">40×40 cm</div>
+                        <div style="margin-left:8px" class="small muted-note">Cliquez sur les dalles pour changer leur couleur</div>
+                    </div>
+                    <div class="control-right">
+                        <button id="zoomIn" class="btn btn-ghost"><i class="fas fa-search-plus"></i></button>
+                        <button id="zoomOut" class="btn btn-ghost"><i class="fas fa-search-minus"></i></button>
+                        <button id="fit" class="btn btn-ghost"><i class="fas fa-expand"></i></button>
+                        <button id="exportPNG" class="btn btn-ghost"><i class="fas fa-download"></i> Exporter</button>
+                    </div>
+                </div>
+
+                <div class="canvas-card" aria-label="Zone design">
+                    <div id="floorCanvasContainer">
+                        <canvas id="floorCanvas" width="1200" height="800" aria-label="Canvas du sol"></canvas>
+                    </div>
+                </div>
+
+                <div class="summaryRow">
+                    <div class="summary">
+                        <h4><i class="fas fa-calculator"></i> Résumé de votre projet</h4>
+                        <div class="calc-row"><div>Surface totale</div><div id="outArea">— m²</div></div>
+                        <div class="calc-row"><div>Nombre total de dalles</div><div id="outGridCount">—</div></div>
+                        <div class="color-counts" id="colorCounts"></div>
+                        <div class="total">
+                            <button id="askQuote" class="btn btn-primary" style="width:100%;padding:14px;font-size:16px">
+                                <i class="fas fa-file-alt"></i> Demander un devis
+                            </button>
+                        </div>
+                        <div class="muted-note" style="text-align: center; margin-top: 10px;">
+                            <i class="fas fa-info-circle"></i> La surface sera automatiquement incluse dans votre demande
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <img src="https://storage.googleapis.com/msgsndr/hWS7LChjZ5ouu0QvqLp6/media/68efd2bf895e2e4843877dd4.png" alt="TilePro" class="footer-logo">
+                <p>Dalles modulaires de luxe pour les projets résidentiels et commerciaux les plus exigeants. Transformez votre espace avec TilePro.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Produits</h4>
+                <ul>
+                    <li><a href="index.html#couleurs">Couleurs</a></li>
+                    <li><a href="index.html#technologie">Technologie TilePro</a></li>
+                    <li><a href="index.html#avantages">Avantages</a></li>
+                    <li><a href="index.html#performance">Performance</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Entreprise</h4>
+                <ul>
+                    <li><a href="index.html">À Propos</a></li>
+                    <li><a href="index.html#devis">Devis</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Guide d'Installation</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Service Client</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TilePro. Tous droits réservés.</p>
+            <p class="developer-credit">Développé par <a href="https://iconicagency.ma" target="_blank">iconicagency.ma</a></p>
+        </div>
+    </footer>
+
+    <!-- GHL Form Modal -->
+    <div class="modal-overlay" id="ghlModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-alt"></i> Demande de devis</h3>
+                <button class="modal-close" id="closeGhlModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="ghl-form-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const TILE_CM = 40;
+        const canvas = document.getElementById('floorCanvas');
+        const ctx = canvas.getContext('2d');
+        const container = document.getElementById('floorCanvasContainer');
+
+        const widthMainEl = document.getElementById('widthMain');
+        const lengthMainEl = document.getElementById('lengthMain');
+        const widthAddEl = document.getElementById('widthAdd');
+        const lengthAddEl = document.getElementById('lengthAdd');
+        const doorWidthEl = document.getElementById('doorWidth');
+        const doorWallEl = document.getElementById('doorWall');
+        const exXEl = document.getElementById('exX'), exYEl = document.getElementById('exY'), exWEl = document.getElementById('exW'), exHEl = document.getElementById('exH');
+        const addExEl = document.getElementById('addExclusion'), clearExEl = document.getElementById('clearExclusions');
+        const resetBtn = document.getElementById('resetBtn');
+        const exportPNG = document.getElementById('exportPNG');
+        const zoomInBtn = document.getElementById('zoomIn'), zoomOutBtn = document.getElementById('zoomOut'), fitBtn = document.getElementById('fit');
+        const askQuoteBtn = document.getElementById('askQuote');
+        const outArea = document.getElementById('outArea'), outGridCount = document.getElementById('outGridCount');
+        const colorCounts = document.getElementById('colorCounts');
+        const ghlModal = document.getElementById('ghlModal');
+        const closeGhlModal = document.getElementById('closeGhlModal');
+        const ghlFormContainer = document.getElementById('ghl-form-container');
+
+        // Mobile menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeMobileMenu() {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+        mobileNavLinks.forEach(link => { link.addEventListener('click', closeMobileMenu); });
+
+        // Accordion
+        document.querySelectorAll('.section .head').forEach(head => {
+            head.addEventListener('click', () => { head.parentElement.classList.toggle('open'); });
+        });
+
+        // Color selection
+        let selectedColor = '#d1d5db';
+        document.querySelectorAll('.colorBtn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.colorBtn').forEach(b => { b.classList.remove('active'); b.classList.add('btn-ghost'); });
+                btn.classList.remove('btn-ghost');
+                btn.classList.add('active');
+                selectedColor = btn.dataset.color;
+            });
+        });
+        document.querySelector('.colorBtn').classList.add('active');
+        document.querySelector('.colorBtn').classList.remove('btn-ghost');
+
+        // Room shape buttons
+        document.querySelectorAll('.shape-btn').forEach(b => {
+            b.addEventListener('click', () => {
+                document.querySelectorAll('.shape-btn').forEach(bb => { bb.classList.remove('active'); });
+                b.classList.add('active');
+                document.getElementById('extraDims').style.display = (b.dataset.room === 'rect') ? 'none' : 'block';
+                updateEverything();
+            });
+        });
+
+        // State
+        const state = {
+            roomType: 'rect', widthMain: 3.50, lengthMain: 5.00,
+            widthAdd: 1.50, lengthAdd: 2.00, doorWidth: 0.90, doorWall: 'bottom',
+            exclusions: [], zoom: 1.0, pxPerMeter: 140
+        };
+
+        let grid = [];
+        let meta = { cols:0, rows:0, cellPx:0, offsetX:0, offsetY:0 };
+
+        function resizeCanvas() {
+            const maxW = Math.max(480, container.clientWidth - 6);
+            const maxH = Math.max(360, container.clientHeight - 6);
+            canvas.width = Math.min(1600, Math.round(maxW));
+            canvas.height = Math.max(360, Math.round(maxH));
+            if (grid && grid.length > 0) draw();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        function metersPerTile() { return TILE_CM / 100.0; }
+
+        function updateEverything() { readInputs(); calculateSurfaceArea(); buildGrid(); }
+
+        function calculateSurfaceArea() {
+            let roomArea = 0;
+            if (state.roomType === 'rect') roomArea = state.widthMain * state.lengthMain;
+            else if (state.roomType === 'lshape') roomArea = (state.widthMain * state.lengthMain) + (state.widthAdd * state.lengthAdd);
+            else if (state.roomType === 'tshape') roomArea = (state.widthMain * state.lengthMain) + (state.widthAdd * state.lengthAdd);
+            outArea.textContent = roomArea.toFixed(2) + ' m²';
+            return roomArea;
+        }
+
+        function readInputs() {
+            const activeRoom = document.querySelector('.shape-btn.active');
+            state.roomType = (activeRoom && activeRoom.dataset.room) ? activeRoom.dataset.room : 'rect';
+            state.widthMain = Math.max(0, parseFloat(widthMainEl.value) || 0);
+            state.lengthMain = Math.max(0, parseFloat(lengthMainEl.value) || 0);
+            state.widthAdd = Math.max(0, parseFloat(widthAddEl.value) || 0);
+            state.lengthAdd = Math.max(0, parseFloat(lengthAddEl.value) || 0);
+            state.doorWidth = Math.max(0, parseFloat(doorWidthEl.value) || 0);
+            state.doorWall = doorWallEl.value;
+        }
+
+        function buildGrid() {
+            readInputs();
+            const mpt = metersPerTile();
+            let bboxW = state.widthMain, bboxH = state.lengthMain;
+            if (state.roomType === 'lshape' || state.roomType === 'tshape') {
+                bboxW = Math.max(state.widthMain, state.widthMain + state.widthAdd);
+                bboxH = Math.max(state.lengthMain, state.lengthMain + state.lengthAdd);
+            }
+            const cols = Math.max(1, Math.ceil(bboxW / mpt));
+            const rows = Math.max(1, Math.ceil(bboxH / mpt));
+            const padding = 16;
+            const usableW = canvas.width - padding * 2;
+            const usableH = canvas.height - padding * 2;
+            const cellPx = Math.floor(Math.min(usableW / cols, usableH / rows) * state.zoom);
+            const gridWpx = cellPx * cols;
+            const gridHpx = cellPx * rows;
+            const offsetX = Math.round((canvas.width - gridWpx) / 2);
+            const offsetY = Math.round((canvas.height - gridHpx) / 2);
+            meta = { cols, rows, cellPx, offsetX, offsetY };
+
+            grid = new Array(rows);
+            for (let r = 0; r < rows; r++) {
+                grid[r] = new Array(cols);
+                for (let c = 0; c < cols; c++) grid[r][c] = { type: 'none', color: null, userColor: null };
+            }
+
+            function centerXY(r, c) { return { x: (c + 0.5) * mpt, y: (r + 0.5) * mpt }; }
+
+            function insideMainCell(r, c) {
+                const { x, y } = centerXY(r, c);
+                if (state.roomType === 'rect') return x > 0 && x <= state.widthMain && y > 0 && y <= state.lengthMain;
+                if (state.roomType === 'lshape') {
+                    return (x > 0 && x <= state.widthMain && y > 0 && y <= state.lengthMain) ||
+                           (x > state.widthMain && x <= state.widthMain + state.widthAdd && y > 0 && y <= state.lengthAdd);
+                }
+                if (state.roomType === 'tshape') {
+                    const addX0 = (state.widthMain - state.widthAdd) / 2;
+                    return (x > 0 && x <= state.widthMain && y > 0 && y <= state.lengthMain) ||
+                           (x > addX0 && x <= addX0 + state.widthAdd && y > state.lengthMain && y <= state.lengthMain + state.lengthAdd);
+                }
+                return false;
+            }
+
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    if (insideMainCell(r, c)) { grid[r][c].type = 'tile'; grid[r][c].color = '#d1d5db'; }
+                    else grid[r][c].type = 'none';
+                }
+            }
+
+            // Door
+            if (state.doorWidth > 0) {
+                const doorTiles = Math.ceil(state.doorWidth / mpt);
+                if (state.doorWall === 'bottom') {
+                    const row = rows - 1, startCol = Math.max(0, Math.floor((cols - doorTiles) / 2));
+                    for (let c = startCol; c < startCol + doorTiles && c < cols; c++) { if (grid[row] && grid[row][c] && grid[row][c].type === 'tile') grid[row][c].type = 'door'; }
+                } else if (state.doorWall === 'top') {
+                    const row = 0, startCol = Math.max(0, Math.floor((cols - doorTiles) / 2));
+                    for (let c = startCol; c < startCol + doorTiles && c < cols; c++) { if (grid[row] && grid[row][c] && grid[row][c].type === 'tile') grid[row][c].type = 'door'; }
+                } else if (state.doorWall === 'left') {
+                    const col = 0, startRow = Math.max(0, Math.floor((rows - doorTiles) / 2));
+                    for (let r = startRow; r < startRow + doorTiles && r < rows; r++) { if (grid[r] && grid[r][col] && grid[r][col].type === 'tile') grid[r][col].type = 'door'; }
+                } else if (state.doorWall === 'right') {
+                    const col = cols - 1, startRow = Math.max(0, Math.floor((rows - doorTiles) / 2));
+                    for (let r = startRow; r < startRow + doorTiles && r < rows; r++) { if (grid[r] && grid[r][col] && grid[r][col].type === 'tile') grid[r][col].type = 'door'; }
+                }
+            }
+
+            // Exclusions
+            state.exclusions.forEach(ex => {
+                const startC = Math.floor(ex.x / mpt), startR = Math.floor(ex.y / mpt);
+                const wTiles = Math.ceil(ex.w / mpt), hTiles = Math.ceil(ex.h / mpt);
+                for (let r = startR; r < startR + hTiles && r < rows; r++) {
+                    for (let c = startC; c < startC + wTiles && c < cols; c++) {
+                        if (grid[r] && grid[r][c] && grid[r][c].type === 'tile') grid[r][c].type = 'excluded';
+                    }
+                }
+            });
+
+            // Edges
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    if (grid[r][c].type === 'tile') {
+                        const n = (rr, cc) => (grid[rr] && grid[rr][cc]) ? grid[rr][cc].type : 'none';
+                        const neigh = [n(r-1,c), n(r+1,c), n(r,c-1), n(r,c+1)];
+                        if (neigh.includes('none') || neigh.includes('door') || neigh.includes('excluded')) {
+                            grid[r][c].type = 'edge'; grid[r][c].color = '#cde7ff';
+                        }
+                    }
+                }
+            }
+            draw();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            if (!grid || grid.length === 0) {
+                ctx.fillStyle = '#f3f4f6'; ctx.fillRect(40, 40, canvas.width - 80, canvas.height - 80);
+                ctx.fillStyle = '#64748b'; ctx.font = '16px Poppins'; ctx.textAlign = 'center';
+                ctx.fillText('Configurez la pièce à gauche pour voir le design', canvas.width / 2, canvas.height / 2);
+                return;
+            }
+            const { cols, rows, cellPx, offsetX, offsetY } = meta;
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    const cell = grid[r][c];
+                    const x = offsetX + c * cellPx, y = offsetY + r * cellPx;
+                    if (cell.type === 'tile') { ctx.fillStyle = cell.userColor || cell.color || '#d1d5db'; ctx.fillRect(x+1,y+1,cellPx-2,cellPx-2); }
+                    else if (cell.type === 'edge') { ctx.fillStyle = cell.userColor || cell.color || '#cde7ff'; ctx.fillRect(x+1,y+1,cellPx-2,cellPx-2); }
+                    else if (cell.type === 'excluded') { ctx.fillStyle = '#ffe6e6'; ctx.fillRect(x+1,y+1,cellPx-2,cellPx-2); }
+                    else if (cell.type === 'door') { ctx.fillStyle = '#fff3cd'; ctx.fillRect(x+1,y+1,cellPx-2,cellPx-2); }
+                    else { ctx.fillStyle = '#fafbfc'; ctx.fillRect(x+1,y+1,cellPx-2,cellPx-2); }
+                    ctx.strokeStyle = '#eef2f7'; ctx.lineWidth = 1; ctx.strokeRect(x+0.5,y+0.5,cellPx-1,cellPx-1);
+                }
+            }
+            ctx.strokeStyle = '#cfd8e3'; ctx.lineWidth = 2;
+            ctx.strokeRect(meta.offsetX+0.5, meta.offsetY+0.5, meta.cols*meta.cellPx-1, meta.rows*meta.cellPx-1);
+            calculateAndPopulate();
+        }
+
+        function calculateAndPopulate() {
+            if (!grid || grid.length === 0) return;
+            let tileCount = 0;
+            const colorCount = { '#d1d5db': 0, '#1f2937': 0, '#ef4444': 0, '#3b82f6': 0, '#f59e0b': 0 };
+            for (let r = 0; r < grid.length; r++) {
+                for (let c = 0; c < grid[0].length; c++) {
+                    const t = grid[r][c].type;
+                    if (t === 'tile' || t === 'edge') {
+                        tileCount++;
+                        const color = grid[r][c].userColor || grid[r][c].color;
+                        if (colorCount.hasOwnProperty(color)) colorCount[color]++;
+                        else colorCount[color] = (colorCount[color] || 0) + 1;
+                    }
+                }
+            }
+            const mpt = metersPerTile();
+            const areaM2 = tileCount * (mpt * mpt);
+            outGridCount.textContent = tileCount;
+            updateColorCounts(colorCount);
+            window.currentProjectData = { area: areaM2, totalTiles: tileCount, colorCounts: colorCount };
+        }
+
+        function updateColorCounts(colorCount) {
+            colorCounts.innerHTML = '';
+            const title = document.createElement('div');
+            title.className = 'small'; title.style.marginBottom = '10px'; title.textContent = 'Dalles par couleur:';
+            colorCounts.appendChild(title);
+            Object.keys(colorCount).forEach(color => {
+                if (colorCount[color] > 0) {
+                    const item = document.createElement('div'); item.className = 'color-count-item';
+                    const info = document.createElement('div'); info.className = 'color-count-info';
+                    const swatch = document.createElement('div'); swatch.className = 'color-count-swatch'; swatch.style.background = color;
+                    const name = document.createElement('div'); name.className = 'small'; name.textContent = getColorName(color);
+                    info.appendChild(swatch); info.appendChild(name);
+                    const value = document.createElement('div'); value.className = 'color-count-value'; value.textContent = colorCount[color];
+                    item.appendChild(info); item.appendChild(value); colorCounts.appendChild(item);
+                }
+            });
+        }
+
+        function getColorName(hex) {
+            const map = { '#d1d5db': 'Gris', '#1f2937': 'Noir', '#ef4444': 'Rouge', '#3b82f6': 'Bleu', '#f59e0b': 'Jaune' };
+            return map[hex] || 'Personnalisé';
+        }
+
+        // Exclusions
+        addExEl.addEventListener('click', () => {
+            const x = parseFloat(exXEl.value) || 0, y = parseFloat(exYEl.value) || 0;
+            const w = parseFloat(exWEl.value) || 0, h = parseFloat(exHEl.value) || 0;
+            if (w <= 0 || h <= 0) { alert('Dimensions invalides'); return; }
+            state.exclusions.push({ x, y, w, h }); updateEverything();
+        });
+        clearExEl.addEventListener('click', () => { state.exclusions = []; updateEverything(); });
+
+        // Reset
+        resetBtn.addEventListener('click', () => {
+            widthMainEl.value = '3.50'; lengthMainEl.value = '5.00';
+            widthAddEl.value = '1.50'; lengthAddEl.value = '2.00';
+            doorWidthEl.value = '0.90'; doorWallEl.value = 'bottom';
+            state.exclusions = []; state.zoom = 1.0; updateEverything();
+        });
+
+        // Zoom
+        zoomInBtn.addEventListener('click', () => { state.zoom = Math.min(2.5, state.zoom + 0.15); buildGrid(); });
+        zoomOutBtn.addEventListener('click', () => { state.zoom = Math.max(0.4, state.zoom - 0.15); buildGrid(); });
+        fitBtn.addEventListener('click', () => { state.zoom = 1.0; buildGrid(); });
+
+        // Export
+        exportPNG.addEventListener('click', () => {
+            const data = canvas.toDataURL('image/png');
+            const a = document.createElement('a'); a.href = data; a.download = 'tilepro-design.png'; a.click();
+        });
+
+        // Canvas click to paint
+        canvas.addEventListener('click', (ev) => {
+            if (!meta || !grid || grid.length === 0) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = ev.clientX - rect.left - meta.offsetX;
+            const y = ev.clientY - rect.top - meta.offsetY;
+            if (x < 0 || y < 0) return;
+            const col = Math.floor(x / meta.cellPx), row = Math.floor(y / meta.cellPx);
+            if (row >= grid.length || col >= grid[0].length) return;
+            if (!grid[row] || !grid[row][col]) return;
+            const cell = grid[row][col];
+            if (cell.type === 'tile' || cell.type === 'edge') {
+                cell.userColor = ev.shiftKey ? null : selectedColor;
+                draw();
+            }
+        });
+
+        // GHL Form
+        askQuoteBtn.addEventListener('click', function() {
+            if (!window.currentProjectData || !window.currentProjectData.area) {
+                alert('Veuillez d\'abord configurer votre pièce pour calculer la surface.'); return;
+            }
+            loadGhlForm();
+        });
+
+        function loadGhlForm() {
+            ghlFormContainer.innerHTML = '';
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://api.leadconnectorhq.com/widget/form/oDiDChLX6qdomPYaENEN';
+            iframe.style.width = '100%'; iframe.style.height = '515px'; iframe.style.border = 'none'; iframe.style.borderRadius = '3px';
+            iframe.id = 'inline-oDiDChLX6qdomPYaENEN'; iframe.title = 'Surface Area Simulator';
+            ghlFormContainer.appendChild(iframe);
+            if (!document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]')) {
+                const script = document.createElement('script');
+                script.src = 'https://link.msgsndr.com/js/form_embed.js';
+                document.head.appendChild(script);
+            }
+            ghlModal.classList.add('active');
+        }
+
+        closeGhlModal.addEventListener('click', function() { ghlModal.classList.remove('active'); });
+        ghlModal.addEventListener('click', function(e) { if (e.target === ghlModal) ghlModal.classList.remove('active'); });
+
+        // Auto-update listeners
+        widthMainEl.addEventListener('input', updateEverything);
+        lengthMainEl.addEventListener('input', updateEverything);
+        widthAddEl.addEventListener('input', updateEverything);
+        lengthAddEl.addEventListener('input', updateEverything);
+        doorWidthEl.addEventListener('input', updateEverything);
+        doorWallEl.addEventListener('change', updateEverything);
+
+        window.addEventListener('load', () => { resizeCanvas(); updateEverything(); });
+    })();
+    </script>
+</body>
+</html>
